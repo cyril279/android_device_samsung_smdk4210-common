@@ -34,6 +34,13 @@ EXYNOS4210_ENHANCEMENTS := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
+# Custom firmware/kernel toolchain
+TARGET_GCC_VERSION_EXP := 4.9
+TARGET_USE_O3 := true
+STRICT_ALIASING := true
+SUPPRES_UNUSED_WARNING := true
+OPT_MEMORY := true
+
 ifdef EXYNOS4210_ENHANCEMENTS
 COMMON_GLOBAL_CFLAGS += -DEXYNOS4_ENHANCEMENTS
 COMMON_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
