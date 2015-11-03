@@ -1,12 +1,14 @@
-# mount point	fstype		device
+# mount point   fstype      device
 
-/boot		emmc		/dev/block/mmcblk0p5
-/recovery	emmc		/dev/block/mmcblk0p6
+/boot           emmc        /dev/block/mmcblk0p5        flags=display="Boot [System Kernel]";backup=1
+/modem          emmc        /dev/block/mmcblk0p8        flags=display="Modem";backup=1
+/recovery       emmc        /dev/block/mmcblk0p6        flags=display="Recovery [+Kernel]";backup=1
 
-/efs		ext4		/dev/block/mmcblk0p1		flags=display="EFS";backup=1
-/cache		ext4		/dev/block/mmcblk0p7
-/system		ext4		/dev/block/mmcblk0p9
-/data		ext4		/dev/block/mmcblk0p10
+/cache          ext4        /dev/block/mmcblk0p7        flags=display="Cache";wipeingui;backup=1;wipeduringfactoryreset;canencryptbackup=1
+/preload        ext4        /dev/block/mmcblk0p12       flags=display="Preload";wipeingui;backup=1
+/efs            ext4        /dev/block/mmcblk0p1        flags=display="EFS [IMEI]";backup=1;canencryptbackup=1;mounttodecrypt
+/system         ext4        /dev/block/mmcblk0p9        flags=display="System";wipeingui;backup=1;canencryptbackup=1
+/data           ext4        /dev/block/mmcblk0p10       flags=display="Data";wipeingui;backup=1;wipeduringfactoryreset;canencryptbackup=1;encryptable=footer
 
-/emmc		auto		/dev/block/mmcblk0p11		flags=display="Internal Storage";storage;wipeingui
-/sdcard		auto		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=display="MicroSD card";storage;wipeingui;removable
+/emmc           auto        /dev/block/mmcblk0p11       flags=display="Internal Storage";storage;settingsstorage;wipeingui
+/sdcard         auto        /dev/block/mmcblk1p1        /dev/block/mmcblk1      flags=display="MicroSD Card";storage;wipeingui;removable
