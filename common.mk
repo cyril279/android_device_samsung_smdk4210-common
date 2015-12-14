@@ -58,6 +58,7 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES := \
     com.android.future.usb.accessory \
+    Eleven \
     SamsungServiceMode
 
 # Audio Packages
